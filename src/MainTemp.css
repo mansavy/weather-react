@@ -1,0 +1,39 @@
+.card-title {
+  font-family: "Permanent Marker", cursive;
+}
+.active {
+  color: black;
+  cursor: default;
+}
+
+.timeDescription {
+  font-size: 20px;
+}
+
+.forecast-body {
+  min-width: 150px;
+  max-width: auto;
+  padding-bottom: 0;
+}
+
+.temperature {
+  font-size: 100px;
+}
+
+.degree {
+  font-size: 20px;
+  position: relative;
+  top: -100px;
+  right: -130px;
+}
+
+#icon {
+  position: relative;
+  bottom: 25px;
+  width: 90px;
+  height: 90px;
+}
+
+#description {
+  text-transform: capitalize;
+}

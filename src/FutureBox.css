@@ -1,0 +1,20 @@
+.future-temps {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.future-stats {
+  display: block;
+  padding: 10px 0;
+  font-size: 20px;
+}
+
+.future-card {
+  background-color: #f5ec2f;
+}
+
+.future-description {
+  text-transform: capitalize;
+  font-size: 105%;
+}

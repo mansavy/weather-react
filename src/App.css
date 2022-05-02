@@ -1,38 +1,76 @@
-.App {
+body {
+  background-image: url("https://bpermin.files.wordpress.com/2022/03/uo91.png");
+  background-size: contain;
+  font-family: "Hubballi", cursive;
+  padding: 35px 90px 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: inline;
+  padding: 5px;
+}
+
+h2 {
+  font-family: "Permanent Marker", cursive;
+}
+
+h3 {
+  font-size: 20px;
+  position: relative;
+  top: -30px;
+}
+
+a {
+  text-decoration: none;
+  color: #61cece;
+}
+
+footer {
+  color: #e9467a;
+  width: 100%;
+  font-size: 15px;
+  text-align: center;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.card {
+  border: 2px none #e9467a;
+  margin: 0 auto;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav {
+  display: inline;
+  float: right;
+}
+
+.card-header {
+  background-color: #e9467a;
+  padding-bottom: 0;
+}
+
+.col-5 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#footerLink {
+  color: #e9467a;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#iconCredit {
+  padding: 0 80px;
 }
