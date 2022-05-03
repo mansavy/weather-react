@@ -21,7 +21,7 @@ export default function App() {
             <div className="row">
               <TempBox />
               <div className="col-1"> </div>
-              <MainTemp />
+              <MainTemp defaultCity="Rio de Janeiro" />
             </div>
           </div>
           <FutureBox />
