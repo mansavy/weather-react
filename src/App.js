@@ -1,5 +1,6 @@
 import "./App.css";
 import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
 import Search from "./Search.js";
 import Pop from "./Pop.js";
 import TempBox from "./TempBox.js";
