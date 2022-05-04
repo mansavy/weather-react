@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./MainTemp.css";
+import FormatDate from "./FormatDate";
 import axios from "axios";
+
 export default function MainTemp(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
@@ -11,12 +13,12 @@ export default function MainTemp(props) {
       feels: response.data.main.feels_like,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
-      sunrise: "6:00 a.m.",
-      sunset: "8:00 p.m.",
+      sunrise: new Date(response.data.sys.sunrise * 1000),
+      sunset: new Date(response.data.sys.sunset * 1000),
       name: response.data.name,
       country: response.data.sys.country,
       temperature: response.data.main.temp,
-      time: "Tuesday, 9:00 a.m.",
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       updatedTime: "10:30 a.m.",
     });
@@ -36,8 +38,12 @@ export default function MainTemp(props) {
                 <li className="stats">
                   Wind speed: {Math.round((weatherData.wind * 15) / 5)} km/h
                 </li>
-                <li className="stats">Sunrise: {weatherData.sunrise}</li>
-                <li className="stats">Sunset: {weatherData.sunset}</li>
+                <li className="stats">
+                  Sunrise: <FormatDate date={weatherData.sunrise} /> a.m.
+                </li>
+                <li className="stats">
+                  Sunset: <FormatDate date={weatherData.sunset} /> p.m.
+                </li>
               </ul>
             </div>
             <div className="col-1"></div>
@@ -48,7 +54,10 @@ export default function MainTemp(props) {
                 <span> {weatherData.country} </span>
               </h2>
               <div className="timeDescription">
-                <span className="currentDayTime">{weatherData.time}</span> |{" "}
+                <span>
+                  <FormatDate date={weatherData.date} />{" "}
+                </span>
+                |{" "}
                 <span className="text-capitalize">
                   {" "}
                   {weatherData.description}
