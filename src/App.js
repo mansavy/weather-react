@@ -2,7 +2,6 @@ import "./App.css";
 import React from "react";
 import Search from "./Search.js";
 import Pop from "./Pop.js";
-import TempBox from "./TempBox.js";
 import MainTemp from "./MainTemp.js";
 import FutureBox from "./FutureBox.js";
 import CardFooter from "./CardFooter.js";
@@ -16,18 +15,11 @@ export default function App() {
           <Pop />
         </div>
 
-        <div className="card-body">
-          <div className="container">
-            <div className="row">
-              <TempBox />
-              <div className="col-1"> </div>
-              <MainTemp defaultCity="Rio de Janeiro" />
-            </div>
-          </div>
-          <FutureBox />
-          <br />
-          <CardFooter />
-        </div>
+        <MainTemp defaultCity="Rio de Janeiro" />
+
+        <FutureBox />
+        <br />
+        <CardFooter />
       </div>
 
       <br />
