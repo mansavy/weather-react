@@ -8,21 +8,25 @@ import CardFooter from "./CardFooter.js";
 
 export default function App() {
   return (
-    <div className="container">
-      <div className="card">
-        <div className="card-header">
-          <Search />
-          <Pop />
+    <div>
+      <div className="container">
+        <div className="card">
+          <div className="card-header">
+            <Search />
+            <Pop />
+          </div>
+
+          <MainTemp defaultCity="Rio de Janeiro" />
+
+          <FutureBox />
+
+          <br />
+          <CardFooter />
+
+          <br />
         </div>
-
-        <MainTemp defaultCity="Rio de Janeiro" />
-
-        <FutureBox />
-        <br />
-        <CardFooter />
       </div>
 
-      <br />
       <footer>
         <span id="myLinks">
           <a
@@ -31,18 +35,19 @@ export default function App() {
             rel="noopener noreferrer"
             id="footerLink"
           >
-            Open-source code:
+            Open-source code:{" "}
           </a>
           <a
             href="https://mandysavoie.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Mandy Savoie{" "}
+            Mandy Savoie
           </a>
         </span>
+
         <span id="iconCredit">
-          Animated icons:
+          Animated icons:{" "}
           <a
             href="https://www.flaticon.com/free-icons/cloud"
             target="_blank"
@@ -52,7 +57,7 @@ export default function App() {
           </a>
         </span>
         <span id="background">
-          Background credit:
+          Background credit:{" "}
           <a
             href="https://www.vecteezy.com"
             target="_blank"
