@@ -27,15 +27,11 @@
   right: -130px;
 }
 
-#icon {
+.icon {
   position: relative;
   bottom: 25px;
   width: 90px;
   height: 90px;
-}
-
-#description {
-  text-transform: capitalize;
 }
 
 .weather-box {

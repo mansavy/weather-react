@@ -13,7 +13,27 @@ form {
   box-shadow: 10px 10px 20px rgba(234, 231, 17, 0.2);
 }
 
-.search {
+.search-search {
   display: inline;
   float: left;
+}
+
+.card {
+  border: 2px none #e9467a;
+  margin: 0 auto;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav {
+  display: inline;
+  float: right;
+}
+
+.card-header {
+  background-color: #e9467a;
+  padding-bottom: 0;
+}
+
+.col-5 {
+  text-align: center;
 }

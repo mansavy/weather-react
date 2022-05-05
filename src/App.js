@@ -1,39 +1,21 @@
 import "./App.css";
 import React from "react";
 import Search from "./Search.js";
-import Pop from "./Pop.js";
-import MainTemp from "./MainTemp.js";
-import FutureBox from "./FutureBox.js";
-import CardFooter from "./CardFooter.js";
 
 export default function App() {
   return (
-    <div>
+    <div className="App">
       <div className="container">
-        <div className="card">
-          <div className="card-header">
-            <Search />
-            <Pop />
-          </div>
-
-          <MainTemp defaultCity="Rio de Janeiro" />
-
-          <FutureBox />
-
-          <br />
-          <CardFooter />
-
-          <br />
-        </div>
+        <Search defaultCity="Rio de Janeiro" />
       </div>
 
       <footer>
-        <span id="myLinks">
+        <span>
           <a
             href="https://github.com/mansavy/weather-react"
             target="_blank"
             rel="noopener noreferrer"
-            id="footerLink"
+            className="footerLink"
           >
             Open-source code:{" "}
           </a>
@@ -46,7 +28,7 @@ export default function App() {
           </a>
         </span>
 
-        <span id="iconCredit">
+        <span className="iconCredit">
           Animated icons:{" "}
           <a
             href="https://www.flaticon.com/free-icons/cloud"
@@ -56,7 +38,7 @@ export default function App() {
             Freepik - Flaticon
           </a>
         </span>
-        <span id="background">
+        <span>
           Background credit:{" "}
           <a
             href="https://www.vecteezy.com"

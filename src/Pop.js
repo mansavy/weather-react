@@ -9,7 +9,7 @@ export default function Pop() {
         <li>Paris</li>
         <li>Munich</li>
       </ul>
-      <p id="popMusic"></p>
+      <p className="popMusic"></p>
     </div>
   );
 }

@@ -2,5 +2,5 @@ import React from "react";
 import "./CardFooter.css";
 
 export default function CardFooter() {
-  return <div className="card-footer"></div>;
+  return <div className="card-footer">CARD FOOTER!</div>;
 }
