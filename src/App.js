@@ -31,7 +31,7 @@ export default function App() {
         <span className="iconCredit">
           Animated icons:{" "}
           <a
-            href="https://www.flaticon.com/free-icons/cloud"
+            href="https://www.flaticon.com"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -24,6 +24,7 @@ export default function Search(props) {
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       localDate: "9:00 a.m.",
+      icon: response.data.weather[0].icon,
     });
   }
 

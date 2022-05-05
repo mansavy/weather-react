@@ -1,6 +1,7 @@
 import React from "react";
 import "./MainTemp.css";
 import FormatDate from "./FormatDate";
+import Icon from "./Icon.js";
 
 export default function MainTemp(props) {
   return (
@@ -31,11 +32,7 @@ export default function MainTemp(props) {
               <span>{props.data.localDate} </span>|{" "}
               <span className="text-capitalize"> {props.data.description}</span>{" "}
             </div>
-            <img
-              src="http://openweathermap.org/img/wn/10d@2x.png"
-              className="icon"
-              alt="Weather icon"
-            />{" "}
+            <Icon code={props.data.icon} />{" "}
             <span className="temperature">
               {" "}
               {Math.round(props.data.temperature)}
