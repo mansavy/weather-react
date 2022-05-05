@@ -61,7 +61,7 @@ export default function Search(props) {
             </div>
             <Pop />
           </div>
-          <MainTemp data={weatherData} />;
+          <MainTemp data={weatherData} />
           <FutureBox />
           <br />
           <CardFooter />

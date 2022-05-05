@@ -1,6 +1,6 @@
 import React from "react";
 import "./MainTemp.css";
-import FormatDate from "./FormatDate";
+import FormatDate from "./FormatDate.js";
 import Icon from "./Icon.js";
 
 export default function MainTemp(props) {

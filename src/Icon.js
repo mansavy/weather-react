@@ -1,4 +1,5 @@
 import React from "react";
+import "./Icon.css";
 import clouds from "./media/clouds.gif";
 import cloudy from "./media/cloudy.gif";
 import cloudyNight from "./media/cloudyNight.gif";
@@ -32,8 +33,11 @@ export default function Icon(props) {
     "50n": foggy,
   };
 
-  let CityIcon = codeMapping[props.code];
-  {
-    return CityIcon;
-  }
+  return (
+    <img
+      className="Icon"
+      src={codeMapping[props.code]}
+      alt={props.description}
+    />
+  );
 }
