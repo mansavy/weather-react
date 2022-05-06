@@ -34,10 +34,12 @@ export default function Icon(props) {
   };
 
   return (
-    <img
-      className="Icon"
-      src={codeMapping[props.code]}
-      alt={props.description}
-    />
+    <span>
+      <img
+        className="Icon"
+        src={codeMapping[props.code]}
+        alt={props.description}
+      />
+    </span>
   );
 }

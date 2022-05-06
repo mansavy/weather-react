@@ -1,0 +1,10 @@
+.temperature {
+  font-size: 100px;
+}
+
+.degree {
+  font-size: 20px;
+  position: relative;
+  top: -100px;
+  right: -130px;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import "./MainTemp.css";
 import FormatDate from "./FormatDate.js";
 import Icon from "./Icon.js";
+import WeatherTemperature from "./WeatherTemperature.js";
 
 export default function MainTemp(props) {
   return (
@@ -33,15 +34,7 @@ export default function MainTemp(props) {
               <span className="text-capitalize"> {props.data.description}</span>{" "}
             </div>
             <Icon code={props.data.icon} />{" "}
-            <span className="temperature">
-              {" "}
-              {Math.round(props.data.temperature)}
-            </span>
-            <br />
-            <span className="degree">
-              <span className="celsius active">°C</span> |
-              <span className="fahrenheit">°F</span>
-            </span>
+            <WeatherTemperature celsius={props.data.temperature} />
             <br />
             <p>
               <small>
