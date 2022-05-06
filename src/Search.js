@@ -59,7 +59,7 @@ export default function Search(props) {
                 <input type="submit" value="Compute" className="button" />
               </form>
             </div>
-            <Pop />
+            <Pop data={weatherData} />
           </div>
           <MainTemp data={weatherData} />
           <FutureBox />

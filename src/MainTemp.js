@@ -33,8 +33,10 @@ export default function MainTemp(props) {
               <span>{props.data.localDate} </span>|{" "}
               <span className="text-capitalize"> {props.data.description}</span>{" "}
             </div>
-            <Icon code={props.data.icon} />{" "}
-            <WeatherTemperature celsius={props.data.temperature} />
+            <span>
+              <Icon code={props.data.icon} />{" "}
+              <WeatherTemperature celsius={props.data.temperature} />
+            </span>
             <br />
             <p>
               <small>
