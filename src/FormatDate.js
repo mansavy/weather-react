@@ -11,20 +11,25 @@ export default function FormatDate(props) {
     "Saturday",
   ];
 
+  let hour = props.date.getHours();
+
   let day = days[props.date.getDay()];
-  let hours = props.date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
+
+  if (hour < 10) {
+    hour = `0${hour}`;
   }
 
   let minutes = props.date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+  let ampm = hour >= 12 ? "p.m." : "a.m.";
+  hour = hour % 12;
+  hour = hour ? hour : 12;
 
   return (
     <span>
-      {day} {hours}:{minutes}
+      {day} {hour}:{minutes} {ampm}
     </span>
   );
 }
