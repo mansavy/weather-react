@@ -30,16 +30,16 @@ export default function Pop(props) {
   return (
     <div className="nav">
       <ul>
-        <li onClick={changeNY}>
+        <li className="pop-city" onClick={changeNY}>
           <a href="/">New York</a>
         </li>
-        <li onClick={changeLondon}>
+        <li className="pop-city" onClick={changeLondon}>
           <a href="/">London</a>
         </li>
-        <li onClick={changeParis}>
+        <li className="pop-city" onClick={changeParis}>
           <a href="/">Paris</a>
         </li>
-        <li onClick={changeMunich}>
+        <li className="pop-city" onClick={changeMunich}>
           <a href="/">Munich</a>
         </li>
       </ul>

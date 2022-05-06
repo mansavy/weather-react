@@ -64,7 +64,7 @@ export default function Search(props) {
           <MainTemp data={weatherData} />
           <FutureBox />
           <br />
-          <CardFooter />
+          <CardFooter data={weatherData} />
         </div>
       </div>
     );

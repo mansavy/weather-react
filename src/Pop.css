@@ -1,5 +1,9 @@
-a {
+.pop-city a {
   color: black;
+}
+
+.pop-city a:hover {
+  color: #f5ec2f;
 }
 
 .popMusic {
