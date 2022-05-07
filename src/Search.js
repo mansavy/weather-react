@@ -25,6 +25,9 @@ export default function Search(props) {
       description: response.data.weather[0].description,
       localDate: "9:00 a.m.",
       icon: response.data.weather[0].icon,
+      timezoneDiff: response.data.timezone,
+      timezone: new Date(Date.now() + response.data.timezone * 1000 * 60),
+      coordinates: response.data.coord,
     });
   }
 
@@ -53,7 +56,6 @@ export default function Search(props) {
                   type="search"
                   placeholder="Destination Unknown (enter city)"
                   size="35"
-                  autoFocus="on"
                   onChange={handleCityChange}
                 />
                 <input type="submit" value="Compute" className="button" />
@@ -62,7 +64,7 @@ export default function Search(props) {
             <Pop setCity={setCity} />
           </div>
           <MainTemp data={weatherData} />
-          <FutureBox />
+          <FutureBox coordinates={weatherData.coordinates} />
           <br />
           <CardFooter data={weatherData} />
         </div>

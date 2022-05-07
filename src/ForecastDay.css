@@ -1,13 +1,13 @@
 .future-temps {
   text-align: center;
-  margin: 0 auto;
-  padding-top: 20px;
+  padding-top: 16px;
 }
 
 .future-stats {
   display: block;
-  padding: 10px 0;
+  padding: 6px 0;
   font-size: 20px;
+  text-align: center;
 }
 
 .future-card {
@@ -17,4 +17,9 @@
 .future-description {
   text-transform: capitalize;
   font-size: 105%;
+}
+
+.forecast-body {
+  min-width: 160px;
+  max-width: auto;
 }
