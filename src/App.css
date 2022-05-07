@@ -1,6 +1,7 @@
 body {
   background-image: url("https://bpermin.files.wordpress.com/2022/03/uo91.png");
-  background-size: contain;
+  background-size: auto;
+  background-repeat: no-repeat;
   font-family: "Hubballi", cursive;
   padding-top: 35px;
 }
