@@ -26,6 +26,8 @@ export default function FutureBox(props) {
                   <ForecastDay data={dailyForecast} />
                 </div>
               );
+            } else {
+              return null;
             }
           })}
         </div>
