@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import "./Search.css";
 import axios from "axios";
 import MainTemp from "./MainTemp.js";
-import Pop from "./Pop.js";
 import FutureBox from "./FutureBox.js";
 import CardFooter from "./CardFooter.js";
 
 export default function Search(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+  const [pop, setPop] = useState(null);
 
   function handleResponse(response) {
     setWeatherData({
@@ -29,6 +29,34 @@ export default function Search(props) {
       timezone: new Date(Date.now() + response.data.timezone * 1000 * 60),
       coordinates: response.data.coord,
     });
+  }
+
+  function changeNY(event) {
+    event.preventDefault();
+    setPop(<p>"Everybody talk about pop music!"</p>);
+    setCity("New York");
+    searchCity();
+  }
+
+  function changeLondon(event) {
+    event.preventDefault();
+    setCity("London");
+    searchCity();
+    setPop(<p>"Everybody talk about pop music!"</p>);
+  }
+
+  function changeParis(event) {
+    event.preventDefault();
+    setPop(<p>"Everybody talk about pop music!"</p>);
+    setCity("Paris");
+    searchCity();
+  }
+
+  function changeMunich(event) {
+    event.preventDefault();
+    setPop(<p>"Everybody talk about pop music!"</p>);
+    setCity("Munich");
+    searchCity();
   }
 
   function handleSubmit(event) {
@@ -61,7 +89,23 @@ export default function Search(props) {
                 <input type="submit" value="Compute" className="button" />
               </form>
             </div>
-            <Pop setCity={setCity} />
+            <div className="nav">
+              <ul>
+                <li className="pop-city" onClick={changeNY}>
+                  <a href="/">New York</a>
+                </li>
+                <li className="pop-city" onClick={changeLondon}>
+                  <a href="/">London</a>
+                </li>
+                <li className="pop-city" onClick={changeParis}>
+                  <a href="/">Paris</a>
+                </li>
+                <li className="pop-city" onClick={changeMunich}>
+                  <a href="/">Munich</a>
+                </li>
+              </ul>
+              <p className="popMusic">{pop} </p>
+            </div>
           </div>
           <MainTemp data={weatherData} />
           <FutureBox coordinates={weatherData.coordinates} />

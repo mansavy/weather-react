@@ -37,3 +37,17 @@ form {
 .col-5 {
   text-align: center;
 }
+
+.pop-city a {
+  color: black;
+}
+
+.pop-city a:hover {
+  color: #f5ec2f;
+}
+
+.popMusic {
+  font-size: 15px;
+  text-align: center;
+  padding: 0;
+}
