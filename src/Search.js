@@ -33,29 +33,25 @@ export default function Search(props) {
   function changeNY(event) {
     event.preventDefault();
     setPop(<p>"Everybody talk about pop muzik!"</p>);
-    setCity("New York");
-    searchCity();
+    searchNY("New York");
   }
 
   function changeLondon(event) {
     event.preventDefault();
-    setCity("London");
-    searchCity();
+    searchLondon("London");
     setPop(<p>"Everybody talk about pop muzik!"</p>);
   }
 
   function changeParis(event) {
     event.preventDefault();
     setPop(<p>"Everybody talk about pop muzik!"</p>);
-    setCity("Paris");
-    searchCity();
+    searchParis("Paris");
   }
 
   function changeMunich(event) {
     event.preventDefault();
     setPop(<p>"Everybody talk about pop muzik!"</p>);
-    setCity("Munich");
-    searchCity();
+    searchMunich("Munich");
   }
 
   function handleSubmit(event) {
@@ -69,6 +65,26 @@ export default function Search(props) {
 
   function searchCity() {
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=bd72cea685abd0c8d8f5b8f11becd620&units=metric`;
+    axios.get(url).then(handleResponse);
+  }
+
+  function searchNY() {
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=bd72cea685abd0c8d8f5b8f11becd620&units=metric`;
+    axios.get(url).then(handleResponse);
+  }
+
+  function searchLondon() {
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=bd72cea685abd0c8d8f5b8f11becd620&units=metric`;
+    axios.get(url).then(handleResponse);
+  }
+
+  function searchParis() {
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=bd72cea685abd0c8d8f5b8f11becd620&units=metric`;
+    axios.get(url).then(handleResponse);
+  }
+
+  function searchMunich() {
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=Munich&appid=bd72cea685abd0c8d8f5b8f11becd620&units=metric`;
     axios.get(url).then(handleResponse);
   }
 
