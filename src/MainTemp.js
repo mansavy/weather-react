@@ -3,6 +3,7 @@ import "./MainTemp.css";
 import FormatDate from "./FormatDate.js";
 import Icon from "./Icon.js";
 import WeatherTemperature from "./WeatherTemperature.js";
+import Time from "./Time.js";
 
 export default function MainTemp(props) {
   return (
@@ -29,8 +30,11 @@ export default function MainTemp(props) {
               <span>{props.data.name},</span>
               <span> {props.data.country} </span>
             </h2>
-            <div className="timeDescription">
-              <span>{props.data.localDate} </span>|{" "}
+            <div className="timeDescription text-capitalize">
+              <span>
+                <Time date={props.data.date} zone={props.data.timezone} />{" "}
+              </span>
+              |{" "}
               <span className="text-capitalize"> {props.data.description}</span>{" "}
             </div>
             <span>

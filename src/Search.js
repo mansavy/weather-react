@@ -23,17 +23,16 @@ export default function Search(props) {
       temperature: response.data.main.temp,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
-      localDate: "9:00 a.m.",
+      localDate: "Tuesday, 9:00 a.m.",
       icon: response.data.weather[0].icon,
-      timezoneDiff: response.data.timezone,
-      timezone: new Date(Date.now() + response.data.timezone * 1000 * 60),
+      timezone: new Date(response.data.timezone),
       coordinates: response.data.coord,
     });
   }
 
   function changeNY(event) {
     event.preventDefault();
-    setPop(<p>"Everybody talk about pop music!"</p>);
+    setPop(<p>"Everybody talk about pop muzik!"</p>);
     setCity("New York");
     searchCity();
   }
@@ -42,19 +41,19 @@ export default function Search(props) {
     event.preventDefault();
     setCity("London");
     searchCity();
-    setPop(<p>"Everybody talk about pop music!"</p>);
+    setPop(<p>"Everybody talk about pop muzik!"</p>);
   }
 
   function changeParis(event) {
     event.preventDefault();
-    setPop(<p>"Everybody talk about pop music!"</p>);
+    setPop(<p>"Everybody talk about pop muzik!"</p>);
     setCity("Paris");
     searchCity();
   }
 
   function changeMunich(event) {
     event.preventDefault();
-    setPop(<p>"Everybody talk about pop music!"</p>);
+    setPop(<p>"Everybody talk about pop muzik!"</p>);
     setCity("Munich");
     searchCity();
   }
