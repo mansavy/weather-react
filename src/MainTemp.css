@@ -26,7 +26,16 @@ small {
   font-size: 17px;
 }
 
+.stattitle {
+  font-size: larger;
+  font-family: "Permanent Marker", cursive;
+}
+
 .stats {
   display: block;
   padding: 10px 0;
+}
+
+.cure-lyrics {
+  font-family: "Hubballi", cursive;
 }

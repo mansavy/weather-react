@@ -3,7 +3,8 @@ import "./MainTemp.css";
 import FormatDate from "./FormatDate.js";
 import Icon from "./Icon.js";
 import WeatherTemperature from "./WeatherTemperature.js";
-import Time from "./Time.js";
+import LocalTime from "./LocalTime.js";
+import Date from "./Date.js";
 
 export default function MainTemp(props) {
   return (
@@ -12,15 +13,16 @@ export default function MainTemp(props) {
         <div className="row">
           <div className="col-5 weather-box">
             <ul>
-              <li className="stats">
+              <li className="stattitle">
+                <Date date={props.data.date} />{" "}
+              </li>
+              <li className="stats mt-0">
                 Feels like: {Math.round(props.data.feels)}°C
               </li>
               <li className="stats">Humidity: {props.data.humidity}%</li>
               <li className="stats">
                 Wind speed: {Math.round((props.data.wind * 15) / 5)} km/h
               </li>
-              <li className="stats">Sunrise: {props.data.sunrise} a.m.</li>
-              <li className="stats">Sunset: {props.data.sunset} p.m.</li>
             </ul>
           </div>
           <div className="col-1"></div>
@@ -32,7 +34,7 @@ export default function MainTemp(props) {
             </h2>
             <div className="timeDescription text-capitalize">
               <span>
-                <Time date={props.data.date} zone={props.data.timezone} />{" "}
+                <LocalTime date={props.data.date} zone={props.data.timezone} />{" "}
               </span>
               |{" "}
               <span className="text-capitalize"> {props.data.description}</span>{" "}

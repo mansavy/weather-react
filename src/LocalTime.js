@@ -10,18 +10,6 @@ export default function Time(props) {
   let hour = now.getHours();
   let minute = now.getMinutes();
 
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-
-  let day = days[now.getDay()];
-
   if (minute < 10) {
     minute = `0${minute}`;
   }
@@ -34,7 +22,7 @@ export default function Time(props) {
   hour = hour ? hour : 12;
   return (
     <span>
-      {day} {hour}:{minute} {ampm}
+      {hour}:{minute} {ampm}
     </span>
   );
 }
