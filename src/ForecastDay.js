@@ -3,6 +3,7 @@ import "./ForecastDay.css";
 
 export default function ForecastDay(props) {
   let unit = props.unit;
+
   function maxTemp() {
     let temperature = Math.round(props.data.temp.max);
 

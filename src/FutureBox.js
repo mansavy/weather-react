@@ -5,7 +5,6 @@ import ForecastDay from "./ForecastDay.js";
 export default function FutureBox(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecast, setforecast] = useState(null);
-  let [unit, setUnit] = useState("celsius");
 
   useEffect(() => {
     setLoaded(false);
@@ -24,11 +23,7 @@ export default function FutureBox(props) {
             if (index > 0 && index < 6) {
               return (
                 <div className="col future-temps" key={index}>
-                  <ForecastDay
-                    data={dailyForecast}
-                    unit={unit}
-                    setUnit={setUnit}
-                  />
+                  <ForecastDay data={dailyForecast} unit={props.unit} />
                 </div>
               );
             } else {
