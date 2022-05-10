@@ -1,7 +1,7 @@
 body {
   background-image: url("https://bpermin.files.wordpress.com/2022/03/uo91.png");
   background-size: auto;
-  background-repeat: no-repeat;
+
   font-family: "Hubballi", cursive;
   padding-top: 35px;
 }
@@ -47,4 +47,20 @@ footer {
 
 .footerLink {
   color: #e9467a;
+}
+
+@media (max-width: 912px) {
+  footer {
+    font-size: small;
+  }
+}
+
+@media (max-width: 576px) {
+  footer {
+    font-size: smaller;
+  }
+
+  .iconCredit {
+    padding: 0 10px;
+  }
 }

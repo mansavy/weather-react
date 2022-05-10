@@ -44,23 +44,25 @@ export default function ForecastDay(props) {
 
   return (
     <span className="ForecastDay">
-      <div className="card future-card">
-        <div className="card-body forecast-body">
-          <h5 className="card-title">{day()}</h5>
-          <span className="card-text">
-            <ul>
-              <li className="future-stats future-description">
-                {props.data.weather[0].description}
-              </li>
-              <li className="future-stats future-description">
-                {" "}
-                {maxTemp()} | {minTemp()}
-              </li>
-              <li className="future-stats future-description">
-                Humidity: <br /> {props.data.humidity}%
-              </li>
-            </ul>
-          </span>
+      <div className="col">
+        <div className="card future-card">
+          <div className="card-body forecast-body">
+            <h5 className="card-title">{day()}</h5>
+            <span className="card-text">
+              <ul>
+                <li className="future-stats future-description">
+                  {props.data.weather[0].description}
+                </li>
+                <li className="future-stats future-description">
+                  {" "}
+                  {maxTemp()} | {minTemp()}
+                </li>
+                <li className="future-stats future-description">
+                  Humidity: <br /> {props.data.humidity}%
+                </li>
+              </ul>
+            </span>
+          </div>
         </div>
       </div>
     </span>

@@ -49,3 +49,31 @@ small {
   position: relative;
   top: -40px;
 }
+
+@media (max-width: 576px) {
+  small {
+    margin-top: 20px;
+  }
+
+  .weather-box {
+    transform: none;
+  }
+
+  .icon {
+    position: relative;
+    top: 30px;
+  }
+
+  .temperature {
+    font-size: 50px;
+  }
+
+  .timeDescription {
+    font-size: 10px;
+  }
+
+  .degree {
+    position: relative;
+    top: -15px;
+  }
+}

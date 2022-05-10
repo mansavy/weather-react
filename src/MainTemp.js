@@ -71,24 +71,24 @@ export default function MainTemp(props) {
                     />{" "}
                   </span>
                   |{" "}
-                  <span className="text-capitalize">
+                  <span className="text-capitalize description">
                     {" "}
                     {props.data.description}
                   </span>{" "}
                 </div>
-                <span>
+                <span className="icon">
                   <Icon code={props.data.icon} />{" "}
-                  <span className="temperature">
+                </span>
+                <span className="temperature">
+                  {" "}
+                  {Math.round(props.data.temperature)}
+                </span>
+                <span className="degree">
+                  °C |{" "}
+                  <a href="/" onClick={convertF}>
                     {" "}
-                    {Math.round(props.data.temperature)}
-                  </span>
-                  <span className="degree">
-                    °C |{" "}
-                    <a href="/" onClick={convertF}>
-                      {" "}
-                      °F{" "}
-                    </a>
-                  </span>
+                    °F{" "}
+                  </a>
                 </span>
                 <br />
                 <p>

@@ -95,9 +95,10 @@ export default function Search(props) {
             <div className="search-search">
               <form onSubmit={handleSubmit}>
                 <input
+                  className="search-bar"
                   type="search"
                   placeholder="Destination Unknown (enter city)"
-                  size="35"
+                  size="32"
                   onChange={handleCityChange}
                 />
                 <input type="submit" value="Compute" className="button" />

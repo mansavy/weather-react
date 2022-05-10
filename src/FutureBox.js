@@ -18,11 +18,11 @@ export default function FutureBox(props) {
   if (loaded) {
     return (
       <div className="FutureBox">
-        <div className="row ms-3 me-3">
+        <div className="row row-cols-1 row-cols-lg-5  ms-3 me-3">
           {forecast.map(function (dailyForecast, index) {
             if (index > 0 && index < 6) {
               return (
-                <div className="col future-temps" key={index}>
+                <div className="col-sm future-temps" key={index}>
                   <ForecastDay data={dailyForecast} unit={props.unit} />
                 </div>
               );
