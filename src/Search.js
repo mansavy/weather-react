@@ -9,6 +9,7 @@ export default function Search(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
   const [pop, setPop] = useState(null);
+  const [unit, setUnit] = useState("celsius");
 
   function handleResponse(response) {
     setWeatherData({
@@ -121,8 +122,12 @@ export default function Search(props) {
               <p className="popMusic">{pop} </p>
             </div>
           </div>
-          <MainTemp data={weatherData} />
-          <FutureBox coordinates={weatherData.coordinates} />
+          <MainTemp data={weatherData} unit={unit} setUnit={setUnit} />
+          <FutureBox
+            coordinates={weatherData.coordinates}
+            unit={unit}
+            setUnit={setUnit}
+          />
           <br />
           <CardFooter data={weatherData} />
         </div>

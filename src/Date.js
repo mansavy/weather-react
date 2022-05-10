@@ -30,9 +30,11 @@ export default function Date(props) {
 
   let date = props.date.getDate();
 
+  let year = props.date.getFullYear();
+
   return (
     <span>
-      {month} {date}
+      {month} {date}, {year}
       <div className="cure-lyrics"> {codeMapping[props.date.getDay()]}</div>
     </span>
   );

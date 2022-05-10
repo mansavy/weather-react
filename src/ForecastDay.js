@@ -2,13 +2,25 @@ import React from "react";
 import "./ForecastDay.css";
 
 export default function ForecastDay(props) {
+  let unit = props.unit;
   function maxTemp() {
     let temperature = Math.round(props.data.temp.max);
+
+    if (unit === "fahrenheit") {
+      temperature = Math.round((temperature * 9) / 5 + 32);
+      return `${temperature}°`;
+    }
+
     return `${temperature}°`;
   }
 
   function minTemp() {
     let temperature = Math.round(props.data.temp.min);
+
+    if (unit === "fahrenheit") {
+      temperature = Math.round((temperature * 9) / 5 + 32);
+      return `${temperature}°`;
+    }
     return `${temperature}°`;
   }
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./MainTemp.css";
 import FormatDate from "./FormatDate.js";
 import Icon from "./Icon.js";
@@ -7,6 +7,26 @@ import LocalTime from "./LocalTime.js";
 import Date from "./Date.js";
 
 export default function MainTemp(props) {
+  const [unit, setUnit] = useState("celsius");
+
+  function feels() {
+    let feels = Math.round(props.data.feels);
+    if (props.unit === "fahrenheit") {
+      feels = Math.round((feels * 9) / 5 + 32);
+      return `${feels}°F`;
+    }
+    return `${feels}°C`;
+  }
+
+  function wind() {
+    let wind = Math.round(props.data.wind * 3.6);
+    if (props.unit === "fahrenheit") {
+      wind = Math.round(props.data.wind * 2.237);
+      return `${wind} m/h`;
+    }
+    return `${wind} km/h`;
+  }
+
   return (
     <div className="card-body">
       <div className="container">
@@ -16,13 +36,9 @@ export default function MainTemp(props) {
               <li className="stattitle">
                 <Date date={props.data.date} />{" "}
               </li>
-              <li className="stats mt-0">
-                Feels like: {Math.round(props.data.feels)}°C
-              </li>
+              <li className="stats mt-0">Feels like: {feels()}</li>
               <li className="stats">Humidity: {props.data.humidity}%</li>
-              <li className="stats">
-                Wind speed: {Math.round((props.data.wind * 15) / 5)} km/h
-              </li>
+              <li className="stats">Wind speed: {wind()}</li>
             </ul>
           </div>
           <div className="col-1"></div>
@@ -41,7 +57,11 @@ export default function MainTemp(props) {
             </div>
             <span>
               <Icon code={props.data.icon} />{" "}
-              <WeatherTemperature celsius={props.data.temperature} />
+              <WeatherTemperature
+                celsius={props.data.temperature}
+                unit={unit}
+                setUnit={setUnit}
+              />
             </span>
             <br />
             <p>
