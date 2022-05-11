@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./MainTemp.css";
 import FormatDate from "./FormatDate.js";
 import Icon from "./Icon.js";
 import LocalTime from "./LocalTime.js";
 import Date from "./Date.js";
-import FutureBox from "./FutureBox.js";
 
 export default function MainTemp(props) {
-  const [unit, setUnit] = useState("celsius");
   function convertF(event) {
     event.preventDefault();
     props.setUnit("fahrenheit");
@@ -42,136 +40,119 @@ export default function MainTemp(props) {
 
   if (props.unit === "celsius") {
     return (
-      <div className="MainTemp">
-        <div className="card-body">
-          <div className="container">
-            <div className="row">
-              <div className="col-5 weather-box">
-                <ul>
-                  <li className="stattitle">
-                    <Date date={props.data.date} />{" "}
-                  </li>
-                  <li className="stats mt-0">Feels like: {feels()}</li>
-                  <li className="stats">Humidity: {props.data.humidity}%</li>
-                  <li className="stats">Wind speed: {wind()}</li>
-                </ul>
-              </div>
-              <div className="col-1"></div>
+      <div className="card-body">
+        <div className="container">
+          <div className="row">
+            <div className="col-5 weather-box">
+              <ul>
+                <li className="stattitle">
+                  <Date date={props.data.date} />{" "}
+                </li>
+                <li className="stats mt-0">Feels like: {feels()}</li>
+                <li className="stats">Humidity: {props.data.humidity}%</li>
+                <li className="stats">Wind speed: {wind()}</li>
+              </ul>
+            </div>
+            <div className="col-1"></div>
 
-              <div className="col-5 main-weather">
-                <h2>
-                  <span>{props.data.name},</span>
-                  <span> {props.data.country} </span>
-                </h2>
-                <div className="timeDescription text-capitalize">
-                  <span>
-                    <LocalTime
-                      date={props.data.date}
-                      zone={props.data.timezone}
-                    />{" "}
-                  </span>
-                  |{" "}
-                  <span className="text-capitalize description">
-                    {" "}
-                    {props.data.description}
-                  </span>{" "}
-                </div>
-                <span className="icon">
-                  <Icon code={props.data.icon} />{" "}
+            <div className="col-5 main-weather">
+              <h2>
+                <span>{props.data.name},</span>
+                <span> {props.data.country} </span>
+              </h2>
+              <div className="timeDescription text-capitalize">
+                <span>
+                  <LocalTime
+                    date={props.data.date}
+                    zone={props.data.timezone}
+                  />{" "}
                 </span>
-                <span className="temperature">
+                |{" "}
+                <span className="text-capitalize description">
                   {" "}
-                  {Math.round(props.data.temperature)}
-                </span>
-                <span className="degree">
-                  °C |{" "}
-                  <a href="/" onClick={convertF}>
-                    {" "}
-                    °F{" "}
-                  </a>
-                </span>
-                <br />
-                <p>
-                  <small>
-                    Last updated: <FormatDate date={props.data.date} />
-                  </small>
-                </p>
+                  {props.data.description}
+                </span>{" "}
               </div>
+              <span className="icon">
+                <Icon code={props.data.icon} />{" "}
+              </span>
+              <span className="temperature">
+                {" "}
+                {Math.round(props.data.temperature)}
+              </span>
+              <span className="degree">
+                °C |{" "}
+                <a href="/" onClick={convertF}>
+                  {" "}
+                  °F{" "}
+                </a>
+              </span>
+              <br />
+              <p>
+                <small>
+                  Last updated: <FormatDate date={props.data.date} />
+                </small>
+              </p>
             </div>
           </div>
         </div>
-        <FutureBox
-          coordinates={props.data.coordinates}
-          unit={unit}
-          setUnit={setUnit}
-        />
       </div>
     );
   } else {
     return (
-      <div className="MainTemp">
-        <div className="card-body">
-          <div className="container">
-            <div className="row">
-              <div className="col-5 weather-box">
-                <ul>
-                  <li className="stattitle">
-                    <Date date={props.data.date} />{" "}
-                  </li>
-                  <li className="stats mt-0">Feels like: {feels()}</li>
-                  <li className="stats">Humidity: {props.data.humidity}%</li>
-                  <li className="stats">Wind speed: {wind()}</li>
-                </ul>
-              </div>
-              <div className="col-1"></div>
+      <div className="card-body">
+        <div className="container">
+          <div className="row">
+            <div className="col-5 weather-box">
+              <ul>
+                <li className="stattitle">
+                  <Date date={props.data.date} />{" "}
+                </li>
+                <li className="stats mt-0">Feels like: {feels()}</li>
+                <li className="stats">Humidity: {props.data.humidity}%</li>
+                <li className="stats">Wind speed: {wind()}</li>
+              </ul>
+            </div>
+            <div className="col-1"></div>
 
-              <div className="col-5 main-weather">
-                <h2>
-                  <span>{props.data.name},</span>
-                  <span> {props.data.country} </span>
-                </h2>
-                <div className="timeDescription text-capitalize">
-                  <span>
-                    <LocalTime
-                      date={props.data.date}
-                      zone={props.data.timezone}
-                    />{" "}
-                  </span>
-                  |{" "}
-                  <span className="text-capitalize">
-                    {" "}
-                    {props.data.description}
-                  </span>{" "}
-                </div>
+            <div className="col-5 main-weather">
+              <h2>
+                <span>{props.data.name},</span>
+                <span> {props.data.country} </span>
+              </h2>
+              <div className="timeDescription text-capitalize">
                 <span>
-                  <Icon code={props.data.icon} />{" "}
-                  <span className="temperature">
-                    {" "}
-                    {Math.round(fahrenheit())}
-                  </span>
-                  <span className="degree">
-                    <a href="/" onClick={convertC}>
-                      {" "}
-                      °C{" "}
-                    </a>
-                    | °F{" "}
-                  </span>
+                  <LocalTime
+                    date={props.data.date}
+                    zone={props.data.timezone}
+                  />{" "}
                 </span>
-                <br />
-                <p>
-                  <small>
-                    Last updated: <FormatDate date={props.data.date} />
-                  </small>
-                </p>
+                |{" "}
+                <span className="text-capitalize">
+                  {" "}
+                  {props.data.description}
+                </span>{" "}
               </div>
+              <span>
+                <Icon code={props.data.icon} />{" "}
+                <span className="temperature"> {Math.round(fahrenheit())}</span>
+                <span className="degree">
+                  <a href="/" onClick={convertC}>
+                    {" "}
+                    °C{" "}
+                  </a>
+                  | °F{" "}
+                </span>
+              </span>
+              <br />
+              <p>
+                <small>
+                  Last updated: <FormatDate date={props.data.date} />
+                </small>
+              </p>
             </div>
           </div>
         </div>
-        <FutureBox
-          coordinates={props.data.coordinates}
-          unit={unit}
-          setUnit={setUnit}
-        />
       </div>
     );
   }

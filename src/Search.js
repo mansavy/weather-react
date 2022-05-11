@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Search.css";
 import axios from "axios";
 import MainTemp from "./MainTemp.js";
+import FutureBox from "./FutureBox.js";
 import CardFooter from "./CardFooter.js";
 
 export default function Search(props) {
@@ -123,7 +124,7 @@ export default function Search(props) {
             </div>
           </div>
           <MainTemp data={weatherData} unit={unit} setUnit={setUnit} />
-
+          <FutureBox coordinates={weatherData.coordinates} unit={unit} />
           <br />
           <CardFooter data={weatherData} />
         </div>
