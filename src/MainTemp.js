@@ -60,7 +60,7 @@ export default function MainTemp(props) {
                 <span>{props.data.name},</span>
                 <span> {props.data.country} </span>
               </h2>
-              <div className="timeDescription text-capitalize">
+              <div className="timeDescription">
                 <span>
                   <LocalTime
                     date={props.data.date}
